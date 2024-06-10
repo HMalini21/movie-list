@@ -11,7 +11,7 @@ h1 {
   text-align: center;
   color: rgb(87 153 225);
 }
-.grid-Container {
+#grid-Container {
   margin-top: 10px;
   margin: 10px;
   display: grid;
