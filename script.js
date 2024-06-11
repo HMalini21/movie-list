@@ -8,6 +8,7 @@ const favMovies = [
     starring: 'Tom Holland',
     duration: '1hr 56m',
     image: './assests/theuncharted.jpg',
+    alternative: 'THE UNCHARTED poster',
   },
   {
     id: 2,
@@ -16,6 +17,34 @@ const favMovies = [
     starring: 'Tom Holland, Tobey Maguire, Andrew Garfield',
     duration: '2hr 28m',
     image: './assests/spidermannowahome.jpg',
+    alternative: 'SPIDERMAN HOMECOMING poster',
+  },
+  {
+    id: 3,
+    title: 'AYALAAN',
+    release_year: '12th jan 2024',
+    starring: 'Sivakarthikeyan, Sharad kelkar',
+    duration: '2hr.35m',
+    image: './assests/ayalaan.jpg',
+    alternative: 'AYALAAN poster',
+  },
+  {
+    id: 4,
+    title: 'DOCTOR',
+    release_year: '9th oct 2021',
+    starring: 'Sivakarthikeyan, Vinay Rai',
+    duration: '2hr.30m',
+    image: './assests/doctor-main.jpg',
+    alternative: 'DOCTOR poster',
+  },
+  {
+    id: 5,
+    title: 'HarryPotter',
+    release_year: '18th nov 2005',
+    starring: 'Daniel Radcliffe, Emma Waston, Rupert Grint',
+    duration: '2hr.30m',
+    image: './assests/HarryPotter.jpg',
+    alternative: 'HarryPotter poster',
   },
 ];
 
@@ -26,7 +55,7 @@ const appendToApp = (movie) => {
     movieCard(movie[i]);
   }
 };
-appendToApp(favMovies);
+
 //To create a HTML card
 function movieCard(m) {
   const movie_card = document.createElement('div');
@@ -38,7 +67,7 @@ function movieCard(m) {
 
   const img = document.createElement('img');
   img.setAttribute('class', 'img-tag');
-  img.setAttribute('alt', 'Uncharted');
+  img.setAttribute('alt', `${m['alternative']}`);
   img.setAttribute('src', `${m['image']}`);
 
   const title = document.createElement('p');
@@ -47,6 +76,7 @@ function movieCard(m) {
 
   const date = document.createElement('p');
   date.innerText = `date: ${m['release_year']}`;
+
   const starring = document.createElement('p');
   starring.innerText = `starring: ${m['starring']} `;
 
@@ -58,3 +88,5 @@ function movieCard(m) {
   div1.appendChild(img);
   div2.append(title, date, starring, duration);
 }
+
+appendToApp(favMovies);
