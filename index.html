@@ -9,39 +9,58 @@
   </head>
 
   <body>
-
     <h1>Entertainment series,shows and dramas</h1>
     <h3>Movies and Shows</h3>
 
     <div class="form-container">
-
-      <form >
-      <h2>Add movies</h2>
-      <div class="form-content">  
-         <div class="input-box">
+      <form id="movie-form">
+        <h2>Add movies</h2>
+        <div class="form-content">
+          <div class="input-box">
             <label for="titlename">title name</label>
-            <input type="text" id="titlename" placeholder="titlename" />
-         </div>
-         <div class="input-box">
+            <input type="text" id="titlename" placeholder="titlename" required />
+          </div>
+          <div class="input-box">
             <label for="release-date">movie release date</label>
-            <input type="date" id="release-date" />  
-         </div>
-         <div class="input-box">
+            <input type="date" id="release-date" required />
+          </div>
+          <div class="input-box">
             <label for="duration">movie duration</label>
-            <input type="number" id="duration" placeholder="movie-duration" />
-         </div>
-         <div class="input-box">
+            <input
+              type="time"
+              id="duration"
+              placeholder="movie-duration"
+              min="01:00"
+              max="03:00"
+              value="02:00"
+            />
+          </div>
+          <div class="input-box">
+            <label for="starring">Starring </label>
+            <input type="text" id="starring" placeholder="starring" />
+          </div>
+          <!-- <div class="input-box">
+            <label for="image-file" class="posterL">poster</label>
+            <input
+              type="file"
+              id="image-file"
+              accept="image/png , image/jpeg, image/jpg"
+              required
+            />
+          </div> -->
+          <div class="input-box">
             <label for="image-file">poster</label>
-            <input type="file" id="image-file" />
-         </div>
+            <input type="text" id="image-file" placeholder="paste url link" required />
+          </div>
+          <div>
+            <button type="submit" id="submit-btn">Submit</button>
+          </div>
         </div>
-        
-        <button class="submit-btn" type="submit">Submit</button>
-        
       </form>
     </div>
-      <div id="grid-Container">
-        <!-- <div class="grid-box">
+
+    <div id="grid-Container">
+      <!-- <div class="grid-box">
           <div>
             <img class="img-tag" src="./assests/theuncharted.jpg" alt="Uncharted" />
           </div>
@@ -52,7 +71,6 @@
             <p>Duration:1hr.56m</p>
           </div> 
         </div>-->
-      </div>
     </div>
   </body>
 </html>
